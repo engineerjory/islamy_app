@@ -25,7 +25,7 @@ class SplashScreen extends StatelessWidget {
         Duration(
           seconds: 2,
         ), () {
-      Navigator.pushNamed(context, screenName);
+      Navigator.pushReplacementNamed(context, screenName);
     });
   }
 }
