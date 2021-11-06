@@ -3,7 +3,8 @@ import 'package:islamy_app/home/home-screen.dart';
 import 'package:islamy_app/home/widgets/hadith_details_screen.dart';
 import 'package:islamy_app/home/widgets/surah_details_screen.dart';
 import 'package:islamy_app/home/widgets/surah_name.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islamy_app/splash-screen.dart';
 
 class MyThemeData {
@@ -22,6 +23,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        AppLocalizations.delegate, // Add this line
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en', ''), // English, no country code
+        Locale('ar', ''), // Spanish, no country code
+      ],
+      locale: Locale('ar', ''),
       theme: ThemeData(
         primaryColor: MyThemeData.colorPrimary,
         accentColor: MyThemeData.colorAccent,

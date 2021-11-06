@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_app/home/widgets/hadith_name.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../main.dart';
 
@@ -28,7 +29,7 @@ class HadithFraagment extends StatelessWidget {
             ),
           ),
           child: Text(
-            'Ahadith',
+            AppLocalizations.of(context)!.ahadith,
             style: TextStyle(
               color: Colors.black,
               fontSize: 25,

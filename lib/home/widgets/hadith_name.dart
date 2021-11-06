@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'hadith_details_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadithName extends StatelessWidget {
   int index;
@@ -19,7 +20,7 @@ class HadithName extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(8),
         child: Text(
-          "hadith # ${index + 1}",
+          AppLocalizations.of(context)!.hadithnumber + "  ${index + 1}",
           style: TextStyle(
             fontSize: 25,
           ),
