@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RadioFraagment extends StatelessWidget {
   const RadioFraagment({Key? key}) : super(key: key);
@@ -6,7 +7,7 @@ class RadioFraagment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('Radio'),
+      child: Text(AppLocalizations.of(context)!.radio),
     );
   }
 }

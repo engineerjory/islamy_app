@@ -3,7 +3,7 @@ import 'package:islamy_app/home/quran_fragment.dart';
 import 'package:islamy_app/home/radio_fragment.dart';
 import 'package:islamy_app/home/tasbih_fragment.dart';
 import 'package:islamy_app/main.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'widgets/hadith_fragment.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
           elevation: 0,
           centerTitle: true,
           title: Text(
-            'Islami',
+            AppLocalizations.of(context)!.islami,
             style: TextStyle(color: Colors.black),
           ),
         ),
@@ -56,16 +56,16 @@ class _HomeScreenState extends State<HomeScreen> {
             // showUnselectedLabels: true,
             items: [
               BottomNavigationBarItem(
-                  label: 'Quran',
+                  label: AppLocalizations.of(context)!.quran,
                   icon: ImageIcon(AssetImage('assets/images/moshaf_gold.png'))),
               BottomNavigationBarItem(
-                  label: 'Ahadeth',
+                  label: AppLocalizations.of(context)!.ahadith,
                   icon: ImageIcon(AssetImage('assets/images/ahadeth.png'))),
               BottomNavigationBarItem(
-                  label: 'Sebha',
+                  label: AppLocalizations.of(context)!.sebha,
                   icon: ImageIcon(AssetImage('assets/images/sebha.png'))),
               BottomNavigationBarItem(
-                  label: 'Radio',
+                  label: AppLocalizations.of(context)!.radio,
                   icon: ImageIcon(AssetImage('assets/images/radio.png'))),
             ],
           ),

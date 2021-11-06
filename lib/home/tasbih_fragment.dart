@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:islamy_app/main.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class TasbihFragment extends StatefulWidget {
   @override
@@ -55,7 +57,7 @@ class _TasbihFragmentState extends State<TasbihFragment> {
           Padding(
             padding: const EdgeInsets.all(18.0),
             child: Text(
-              'number of tasbih',
+                AppLocalizations.of(context)!.numOfTsbih,
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
             ),
           ),
