@@ -10,5 +10,10 @@
   "radio" : "Radio",
   "hadithnumber" : "Hadith Number ",
   "suraName" : "Sura Name",
-  "numOfTsbih" : "Number of tasbih "
+  "numOfTsbih" : "Number of tasbih ",
+  "settings" : " Settings ",
+  "sobhanAllah" : " Sobhana Allah ",
+  "alhamdoLelah" : " Alhamdo LellaH ",
+  "allahoAkbar" : " Allaho Akbar",
+  "quranRadio" : "Quran Radio"
 }

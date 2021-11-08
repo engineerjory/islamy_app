@@ -24,14 +24,14 @@ class HadithFraagment extends StatelessWidget {
           padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
             border: Border.all(
-              color: MyThemeData.colorPrimary,
+              color: MyThemeData1.colorPrimary,
               width: 2,
             ),
           ),
           child: Text(
             AppLocalizations.of(context)!.ahadith,
             style: TextStyle(
-              color: Colors.black,
+              //color: Colors.black,
               fontSize: 25,
               fontWeight: FontWeight.w500,
             ),
@@ -49,7 +49,7 @@ class HadithFraagment extends StatelessWidget {
               return Container(
                 width: 1,
                 height: 2,
-                color: MyThemeData.colorPrimary,
+                color: MyThemeData1.colorPrimary,
               );
             },
           ),

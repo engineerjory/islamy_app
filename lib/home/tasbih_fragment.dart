@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:islamy_app/main.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
 class TasbihFragment extends StatefulWidget {
   @override
   State<TasbihFragment> createState() => _TasbihFragmentState();
@@ -14,11 +13,20 @@ class _TasbihFragmentState extends State<TasbihFragment> {
   int counter = 0;
   int index = 0;
   double angle = 0;
-
-  List<String> zekr = ["sob7an Allah", "alhamdo Lelah", 'Allaho akbar'];
+  //
+  // List<String> zekr = [
+  //   AppLocalizations.of(context )!.sobhanAllah,
+  //   AppLocalizations.of(context)!.alhamdoLelah,
+  //   AppLocalizations.of(context)!.allahoAkbar,
+  // ];
 
   @override
   Widget build(BuildContext context) {
+    List<String> zekr = [
+      AppLocalizations.of(context)!.sobhanAllah,
+      AppLocalizations.of(context)!.alhamdoLelah,
+      AppLocalizations.of(context)!.allahoAkbar,
+    ];
     return Container(
       width: double.infinity,
       height: double.infinity,
@@ -57,7 +65,7 @@ class _TasbihFragmentState extends State<TasbihFragment> {
           Padding(
             padding: const EdgeInsets.all(18.0),
             child: Text(
-                AppLocalizations.of(context)!.numOfTsbih,
+              AppLocalizations.of(context)!.numOfTsbih,
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
             ),
           ),
@@ -98,7 +106,7 @@ class _TasbihFragmentState extends State<TasbihFragment> {
     counter++;
     if (counter % 33 == 0) {
       index++;
-      if (index == zekr.length) {
+      if (index == 3) {
         index = 0;
       }
     }
