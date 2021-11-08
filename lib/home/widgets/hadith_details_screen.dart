@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadithDetailsScreen extends StatefulWidget {
   static const String ROUTE_NAME = 'HadithDetailsScreen';
@@ -25,26 +26,33 @@ class _HadithDetailsScreenState extends State<HadithDetailsScreen> {
             fit: BoxFit.fill),
       ),
       child: Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
             centerTitle: true,
-          ),
-          body: Container(
-            child: hadith.isEmpty
-                ? Center(child: CircularProgressIndicator())
-                : ListView.builder(
-                    itemBuilder: (context, index) => Text(
-                      hadith[index],
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
+            title: Text(
+              AppLocalizations.of(context)!.islami,
+              style: TextStyle(color: Colors.black),
+            )),
+        body: Container(
+          margin: EdgeInsets.all(18),
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+          color: Colors.white,
+          child: hadith.isEmpty
+              ? Center(child: CircularProgressIndicator())
+              : ListView.builder(
+                  itemBuilder: (context, index) => Text(
+                    hadith[index],
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
                     ),
-                    itemCount: hadith.length,
                   ),
-          )),
+                  itemCount: hadith.length,
+                ),
+        ),
+      ),
     );
   }
 

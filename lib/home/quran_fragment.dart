@@ -141,7 +141,7 @@ class QuranFragment extends StatelessWidget {
           padding: EdgeInsets.all(12),
           decoration: BoxDecoration(
             border: Border.all(
-              color: MyThemeData.colorPrimary,
+              color: MyThemeData1.colorPrimary,
               width: 2,
             ),
           ),
@@ -166,7 +166,7 @@ class QuranFragment extends StatelessWidget {
               return Container(
                 width: 1,
                 height: 2,
-                color: MyThemeData.colorPrimary,
+                color: MyThemeData1.colorPrimary,
               );
             },
           ),

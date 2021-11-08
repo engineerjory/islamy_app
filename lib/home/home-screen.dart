@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:islamy_app/home/quran_fragment.dart';
 import 'package:islamy_app/home/radio_fragment.dart';
 import 'package:islamy_app/home/tasbih_fragment.dart';
+import 'package:islamy_app/home/widgets/providers/app_config_provider.dart';
+import 'package:islamy_app/home/widgets/settings_fragment.dart';
 import 'package:islamy_app/main.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 import 'widgets/hadith_fragment.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,30 +21,34 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
+
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
             image: AssetImage(
-              'assets/images/background.png',
+              provider.imagePath,
+              // 'assets/images/background.png',
             ),
             fit: BoxFit.fill),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        //   backgroundColor: Colors.transparent,
         appBar: AppBar(
           // backgroundColor: Theme.of(context).primaryColor,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
+          //   backgroundColor: Colors.transparent,
+          //  elevation: 0,
           centerTitle: true,
           title: Text(
             AppLocalizations.of(context)!.islami,
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(
+                color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
           ),
         ),
         body: getMainFragment(),
         bottomNavigationBar: Theme(
-          data:
-              Theme.of(context).copyWith(canvasColor: MyThemeData.colorPrimary),
+          data: Theme.of(context)
+              .copyWith(canvasColor: MyThemeData1.colorPrimary),
           child: BottomNavigationBar(
             currentIndex: selectedIndex,
             iconSize: 35,
@@ -49,11 +56,9 @@ class _HomeScreenState extends State<HomeScreen> {
               selectedIndex = index;
               setState(() {});
             },
-            selectedIconTheme: IconThemeData(color: MyThemeData.colorAccent),
-            //  selectedLabelStyle: TextStyle(color: MyThemeData.colorAccent),
-            selectedItemColor: MyThemeData.colorAccent,
+            // selectedIconTheme: IconThemeData(color: MyThemeData1.colorAccent),
+            // selectedItemColor: MyThemeData1.colorAccent,
             showSelectedLabels: true,
-            // showUnselectedLabels: true,
             items: [
               BottomNavigationBarItem(
                   label: AppLocalizations.of(context)!.quran,
@@ -67,6 +72,12 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                   label: AppLocalizations.of(context)!.radio,
                   icon: ImageIcon(AssetImage('assets/images/radio.png'))),
+              BottomNavigationBarItem(
+                label: AppLocalizations.of(context)!.settings,
+                icon: Icon(
+                  Icons.settings,
+                ),
+              ),
             ],
           ),
         ),
@@ -81,8 +92,10 @@ class _HomeScreenState extends State<HomeScreen> {
       return HadithFraagment();
     } else if (selectedIndex == 2) {
       return TasbihFragment();
-    } else {
+    } else if (selectedIndex == 3) {
       return RadioFraagment();
+    } else {
+      return Settings();
     }
   }
 }

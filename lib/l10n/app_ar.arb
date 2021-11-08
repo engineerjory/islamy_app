@@ -7,5 +7,10 @@
   "radio" : "اذاعة",
   "hadithnumber" : "الحديث رقم  ",
   "suraName" : "اسم السورة ",
-  "numOfTsbih" : "عدد التسبيح  "
+  "numOfTsbih" : "عدد التسبيح  ",
+  "settings" : "الاعدادات",
+  "sobhanAllah" : "   سبحان الله ",
+  "alhamdoLelah" : " الحمد لله ",
+  "allahoAkbar" : " الله اكبر ",
+  "quranRadio" : " اذاعة القران الكريم "
 }

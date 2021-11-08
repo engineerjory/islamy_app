@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamy_app/main.dart';
 
 class SuraDetailsScreen extends StatefulWidget {
   static const String ROUTE_NAME = 'SuraDetailsScreen';
@@ -26,30 +28,54 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
             fit: BoxFit.fill),
       ),
       child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            centerTitle: true,
-            title: Text(
-              '${args.suraName}',
-              style: TextStyle(color: Colors.black),
-            ),
+          elevation: 0,
+          centerTitle: true,
+          title: Text(
+            AppLocalizations.of(context)!.islami,
+            //  '${args.suraName}',
+            style: TextStyle(color: Colors.black),
           ),
-          body: Container(
-            child: verses.isEmpty
-                ? Center(child: CircularProgressIndicator())
-                : ListView.builder(
-                    itemBuilder: (context, index) => Text(
-                      verses[index],
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 18,
+        ),
+        body: Container(
+          margin: EdgeInsets.all(18),
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+          color: Colors.white,
+          child: Column(
+            children: [
+              Text(
+                args.suraName,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.7,
+                height: 2,
+                color: MyThemeData1.colorPrimary,
+              ),
+              Expanded(
+                child: verses.isEmpty
+                    ? Center(child: CircularProgressIndicator())
+                    : ListView.builder(
+                        itemBuilder: (context, index) => Text(
+                          verses[index],
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 18,
+                          ),
+                        ),
+                        itemCount: verses.length,
                       ),
-                    ),
-                    itemCount: verses.length,
-                  ),
-          )),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 
