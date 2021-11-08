@@ -31,7 +31,7 @@ class HadithFraagment extends StatelessWidget {
           child: Text(
             AppLocalizations.of(context)!.ahadith,
             style: TextStyle(
-              color: Colors.black,
+              //color: Colors.black,
               fontSize: 25,
               fontWeight: FontWeight.w500,
             ),

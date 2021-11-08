@@ -38,11 +38,14 @@ class _HomeScreenState extends State<HomeScreen> {
           // backgroundColor: Theme.of(context).primaryColor,
           //   backgroundColor: Colors.transparent,
           //  elevation: 0,
+
           centerTitle: true,
           title: Text(
             AppLocalizations.of(context)!.islami,
             style: TextStyle(
-                color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
+                color: MyThemeData1.colorPrimary,
+                fontSize: 30,
+                fontWeight: FontWeight.bold),
           ),
         ),
         body: getMainFragment(),

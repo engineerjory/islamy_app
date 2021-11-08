@@ -92,8 +92,10 @@ class _SettingsState extends State<Settings> {
                 },
                 child: Text(
                   'Light Theme',
-                  style:
-                      TextStyle(fontSize: 20, color: MyThemeData1.colorAccent),
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: MyThemeData1.colorAccent,
+                  ),
                 )),
           ),
         ],

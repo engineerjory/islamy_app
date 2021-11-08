@@ -74,45 +74,59 @@ class MyApp extends StatelessWidget {
 
 class MyThemeData1 {
   static Color colorPrimary = Color.fromRGBO(183, 147, 95, 1.0);
+  static Color blackTh = Color.fromRGBO(112, 112, 112, 1.0);
+  static Color whiteTh = Colors.white;
   static Color colorAccent = Color.fromRGBO(36, 36, 36, 1.0);
   static Color colorPrimaryDark = Color.fromRGBO(20, 26, 46, 1.0);
   static Color colorAccentDark = Color.fromRGBO(250, 204, 29, 1.0);
   static final ThemeData lightTheme = ThemeData(
-      brightness: Brightness.light,
-      primaryColor: MyThemeData1.colorPrimary,
-      scaffoldBackgroundColor: Colors.transparent,
-      appBarTheme: AppBarTheme(
-          titleTextStyle: TextStyle(
-            color: Colors.black,
-          ),
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          iconTheme: IconThemeData(
-            color: Colors.black,
-            size: 20,
-          )),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.white,
-      ));
+    brightness: Brightness.light,
+    primaryColor: MyThemeData1.colorPrimary,
+    accentColor: MyThemeData1.colorAccent,
+    backgroundColor: MyThemeData1.whiteTh,
+    scaffoldBackgroundColor: Colors.transparent,
+    appBarTheme: AppBarTheme(
+        titleTextStyle: TextStyle(
+          color: MyThemeData1.blackTh,
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: Colors.black,
+          size: 20,
+        )),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedItemColor: Colors.black,
+      unselectedItemColor: Colors.white,
+    ),
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: MyThemeData1.colorPrimary,
+    ),
+  );
   static final ThemeData darkTheme = ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: MyThemeData1.colorPrimaryDark,
-      scaffoldBackgroundColor: Colors.transparent,
-      appBarTheme: AppBarTheme(
-          titleTextStyle: TextStyle(
-            color: Colors.white,
-          ),
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          iconTheme: IconThemeData(
-            color: Colors.white,
-            size: 20,
-          )),
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: MyThemeData1.colorPrimaryDark,
-        unselectedItemColor: Colors.white,
-      ));
+    brightness: Brightness.dark,
+    primaryColor: MyThemeData1.colorPrimaryDark,
+    accentColor: MyThemeData1.colorAccentDark,
+    backgroundColor: MyThemeData1.blackTh,
+    scaffoldBackgroundColor: Colors.transparent,
+    appBarTheme: AppBarTheme(
+        titleTextStyle: TextStyle(
+          color: MyThemeData1.colorAccentDark,
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: MyThemeData1.colorAccentDark,
+          size: 20,
+        )),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedItemColor: MyThemeData1.colorPrimaryDark,
+      unselectedItemColor: MyThemeData1.colorAccentDark,
+    ),
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: MyThemeData1.colorPrimaryDark,
+    ),
+  );
 }
 // class MyThemeData {
 //   static const Color primaryColor = Color.fromARGB(255, 183, 147, 95) ;

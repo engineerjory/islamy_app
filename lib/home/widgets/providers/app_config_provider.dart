@@ -8,6 +8,7 @@ class AppConfigProvider with ChangeNotifier {
   //assets/images/darkbackground.png
   String imagePath = "assets/images/background.png";
   String splashPath = 'assets/images/splash.png';
+  String backGround = 'assets/images/background.png';
 
   // var themeMode = ThemeMode.light;
   ThemeMode appTheme = ThemeMode.light;
@@ -28,6 +29,7 @@ class AppConfigProvider with ChangeNotifier {
     appTheme = newMode;
     imagePath = "assets/images/darkbackground.png";
     splashPath = "assets/images/darksplashg.png";
+    backGround = 'assets/images/darkbackground.png';
     notifyListeners();
   }
 
